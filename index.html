@@ -10,63 +10,6 @@
 </head>
 <body>
 
-  <!-- ═══════════════════ SPLASH SCREEN ═══════════════════ -->
-  <div id="splash">
-    <div class="splash-bg-glow"></div>
-    <canvas id="splash-canvas"></canvas>
-    <div class="splash-content">
-
-      <!-- PHASE 1: Countdown 5→1 (no club name) -->
-      <div id="splash-countdown-phase">
-        <div class="splash-top-label">DATA SCIENCE CLUB</div>
-        <div class="splash-ring-wrap">
-          <svg class="splash-ring-svg" viewBox="0 0 200 200">
-            <defs>
-              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#c8a96e"/>
-                <stop offset="50%" stop-color="#e8d5a3"/>
-                <stop offset="100%" stop-color="#8b9dc3"/>
-              </linearGradient>
-              <filter id="ringGlow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <!-- outer decorative ring -->
-            <circle class="splash-ring-deco" cx="100" cy="100" r="92"/>
-            <!-- bg track -->
-            <circle class="splash-ring-bg" cx="100" cy="100" r="80"/>
-            <!-- animated progress ring -->
-            <circle class="splash-ring-fg" id="splashRing" cx="100" cy="100" r="80"
-              stroke-dasharray="502.65" stroke-dashoffset="0" filter="url(#ringGlow)"/>
-            <!-- inner glow circle -->
-            <circle class="splash-ring-inner" cx="100" cy="100" r="66"/>
-          </svg>
-          <!-- number sits inside the ring via absolute positioning -->
-          <div class="splash-num-wrap">
-            <div class="splash-num" id="splashNum">5</div>
-          </div>
-        </div>
-        <div class="splash-sub">INAUGURATING SOON</div>
-      </div>
-
-      <!-- PHASE 2: Only the Inaugurate button (still no club name) -->
-      <div id="splash-inaugurate-phase" style="display:none;">
-        <div class="splash-mystery-mark">◈</div>
-        <div class="splash-reveal-hint">THE MOMENT HAS ARRIVED</div>
-        <button class="splash-inaugurate-btn" onclick="launchWebsite()">
-          <span class="splash-btn-inner">
-            <span class="splash-btn-star">✦</span>
-            <span>INAUGURATE</span>
-          </span>
-          <div class="splash-btn-glow"></div>
-        </button>
-        <div class="splash-hint">Press to unveil</div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursorTrail"></div>

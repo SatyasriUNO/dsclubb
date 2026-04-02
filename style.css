@@ -169,7 +169,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .profile-featured:hover{border-color:rgba(200,169,110,.4);background:rgba(200,169,110,.05);}
 @media(max-width:680px){.profile-featured{flex-direction:column;align-items:center;text-align:center;}.profile-links{justify-content:center;}}
 .profile-img-wrap{flex-shrink:0;text-align:center;}
-.profile-img-placeholder{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,rgba(200,169,110,.12),rgba(184,196,212,.08));border:2px solid rgba(200,169,110,.35);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 0 28px rgba(200,169,110,.15);}
+.profile-img-placeholder{width:130px;height:130px;border-radius:50%;object-fit:cover;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,110,.12),rgba(184,196,212,.08));border:2px solid rgba(200,169,110,.35);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 28px rgba(200,169,110,.15);}
 .profile-img-placeholder.gold{border-color:rgba(200,169,110,.5);box-shadow:0 0 28px rgba(200,169,110,.25);}
 .profile-initials{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .profile-img-ring{position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(var(--gold),var(--silver),var(--gold));z-index:-1;animation:ringRotate 5s linear infinite;opacity:.4;}

@@ -87,6 +87,10 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 [data-reveal].revealed{opacity:1;transform:translateY(0);}
 
+.team-container {display: flex;flex-direction: column;align-items: center;gap: 50px;}
+
+.team-row {display: flex;justify-content: center;gap: 40px;flex-wrap: wrap;}
+
 .motto-section{text-align:center;padding:100px 28px;}
 .motto-text{font-family:'Cinzel',serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:900;line-height:1.25;letter-spacing:2px;background:linear-gradient(135deg,#fff 0%,var(--gold-light) 50%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px;}
 .motto-text em{font-style:italic;filter:drop-shadow(0 0 16px rgba(200,169,110,.6));}
@@ -154,18 +158,25 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .leads-grid {display: flex;flex-wrap: wrap;justify-content: center;gap: 24px;}
 @media(max-width:900px){.leads-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.leads-grid{grid-template-columns:1fr;}}
-.lead-card{background:var(--card-bg);width: 250px;border:1px solid var(--card-border);padding:28px 20px;text-align:center;position:relative;overflow:hidden;transition:var(--tr);}
-.lead-card:hover{border-color:rgba(200,169,110,.4);background:rgba(200,169,110,.07);transform:translateY(-5px);}
+.lead-card{background:var(--card-bg);width: 220px;border:1px solid var(--card-border);padding:24px;text-align:center;position:relative;overflow:hidden;transition:all 0.35s ease;opacity: 0;transform: translateY(30px);animation: fadeUp 0.6s ease forwards;}
+.lead-card:nth-child(1) { animation-delay: 0.1s; }
+.lead-card:nth-child(2) { animation-delay: 0.2s; }
+.lead-card:nth-child(3) { animation-delay: 0.3s; }
+.lead-card:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fadeUp {to {opacity: 1;transform: translateY(0);}}
+.lead-card:hover{border-color:var(--gold);box-shadow: 0 0 25px rgba(200,169,110,0.4);background:rgba(200,169,110,.07);transform:translateY(-10px) scale(1.03);}
 .lead-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--silver));transform:scaleX(0);transition:transform .3s ease;}
+.lead-card:hover::before {content: "";position: absolute;inset: -1px;border-radius: 10px;background: linear-gradient(135deg, var(--gold), var(--silver));opacity: 0.15;z-index: 0;}
 .lead-card:hover::after{transform:scaleX(1);}
-.lead-img {width: 80px;height: 80px;border-radius: 50%;object-fit: cover;border: 1px solid rgba(200,169,110,.3);}
+.lead-card:hover .lead-img {transform: scale(1.1);box-shadow: 0 0 15px rgba(200,169,110,0.6);}
+.lead-img {width: 80px;height: 80px;border-radius: 50%;object-fit: cover;border: 1px solid rgba(200,169,110,.3);transition: all 0.3s ease;}
 .lead-img-wrap{margin-bottom:16px;display:flex;justify-content:center;}
 .lead-img-placeholder{width:80px;height:80px;border-radius:50%;border:1px solid rgba(200,169,110,.3);background:linear-gradient(135deg,rgba(200,169,110,.1),rgba(184,196,212,.07));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;color:rgba(200,169,110,.5);}
 .lead-name{font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;letter-spacing:1.5px;color:#fff;margin-bottom:4px;}
 .lead-role{font-family:'Share Tech Mono',monospace;font-size:.56rem;letter-spacing:3px;color:rgba(184,196,212,.5);margin-bottom:16px;}
 .lead-links{display:flex;gap:8px;justify-content:center;}
 .lead-link{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid rgba(200,169,110,.22);color:rgba(200,169,110,.45);text-decoration:none;transition:var(--tr);}
-.lead-link:hover{border-color:var(--gold);color:var(--gold);}
+.lead-link:hover{border-color:var(--gold);color:var(--gold);box-shadow: 0 0 10px rgba(200,169,110,0.5);}
 .lead-link svg{width:13px;height:13px;}
 
 .newsletter-section{text-align:center;}

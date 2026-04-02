@@ -86,6 +86,20 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .section-sub{color:var(--text-muted);font-size:1rem;line-height:1.75;max-width:580px;font-weight:300;margin-bottom:40px;}
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 [data-reveal].revealed{opacity:1;transform:translateY(0);}
+.event-box {border: 1px solid var(--gold);padding: 20px;margin: 15px;text-align: center;border-radius: 10px;}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.gallery-box {
+  height: 200px;
+  border: 2px dashed var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .team-container {display: flex;flex-direction: column;align-items: center;gap: 50px;}
 

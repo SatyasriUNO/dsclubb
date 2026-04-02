@@ -10,8 +10,37 @@ document.addEventListener('mousemove', e=>{
 document.addEventListener('mousedown',()=>{ cursor.style.transform='translate(-50%,-50%) scale(.6)'; cursor.style.background='var(--silver)'; });
 document.addEventListener('mouseup',  ()=>{ cursor.style.transform='translate(-50%,-50%) scale(1)';  cursor.style.background='var(--gold)'; });
 
+document.addEventListener("mousemove", (e) => {const light = document.querySelector(".spotlight");if (!light) return;light.style.left = e.clientX + "px";light.style.top = e.clientY + "px";});
+
+document.querySelectorAll(".lead-card").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateX = -(y - rect.height / 2) / 10;
+    const rotateY = (x - rect.width / 2) / 10;
+    card.style.transform = `
+      perspective(800px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.05)
+    `;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "perspective(800px) rotateX(0) rotateY(0)";
+  });
+});
+
 /* ── 3. NAVBAR ── */
 window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40); });
+
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+  const bg = document.body;
+  window.addEventListener("scroll", () => {
+  bg.style.backgroundPosition = `center ${window.scrollY * 0.2}px`;
+});
+});
 
 /* ── 4. MOBILE MENU ── */
 function toggleMenu(){
